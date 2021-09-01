@@ -104,9 +104,9 @@ Run the Rust code:
 
     **Terminal** -> **Run Task** -> **FileMan** -> **Continue without scanning the task output**
     
-    Documentation relating to FileMan is available in the docs directory:
+ Documentation relating to FileMan is available in the docs directory:
     
-    https://github.com/RamSailopal/YottaDB-FileMan/blob/main/docs/Fileman_22-2_Getting_Started.pdf
+ https://github.com/RamSailopal/YottaDB-FileMan/blob/main/docs/Fileman_22-2_Getting_Started.pdf
 
 
 
