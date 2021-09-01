@@ -1,0 +1,35 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "YDB",
+			"type": "shell",
+			"command": "sudo chmod 0600 /root/.ssh/id_rsa && sudo bash -c 'ssh -o \"StrictHostKeyChecking Off\" root@dev_yottafileman_1 \"export ydb_dir=\"/data\" && /opt/yottadb/current/ydb\"'"
+		},
+        {
+			"label": "YottaDB Compiler",
+			"type": "shell",
+			"command": "tail -f /home/project/log/rcomp.log"
+		},
+                {
+                        "label": "Rust compiler",
+                        "type": "shell",
+                        "command": "sudo chmod 0600 /root/.ssh/id_rsa && sudo bash -c 'ssh -o \"StrictHostKeyChecking Off\" root@dev_yottafileman_1 \"cd /usr/local/YDBRust && cargo build\"'"
+                },
+                {
+                        "label": "Rust Run",
+                        "type": "shell",
+                        "command": "sudo chmod 0600 /root/.ssh/id_rsa && sudo bash -c 'ssh -o \"StrictHostKeyChecking Off\" root@dev_yottafileman_1 \"cd /usr/local/YDBRust && cargo run\"'"
+                },
+		 {
+                        "label": "FileMan",
+                        "type": "shell",
+                        "command": "sudo chmod 0600 /root/.ssh/id_rsa && sudo bash -c 'ssh -o \"StrictHostKeyChecking Off\" root@dev_yottafileman_1 \"export ydb_dir=\"/data\" && /opt/yottadb/current/ydb -run \"Q^DI\"\"'"
+                },
+
+
+
+	]
+}

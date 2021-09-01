@@ -1,0 +1,34 @@
+#
+#       AUTHOR - Raman Sailopal
+#
+#       docker compose yml file for the YottaDB/Rust/Theia stack
+#
+version: "2"
+services:
+ yottafileman:
+   image: docker.io/ramb0/yotta-fileman:latest
+   networks:
+      - yottanet
+   mem_limit: 1G
+   volumes:
+      - app-volume:/home/project
+      - ../.ssh:/root/.ssh
+      - ../lsyncd/lsyncd.conf:/etc/lsyncd.conf
+ ide:
+   image: docker.io/ramb0/theia-mumps:latest
+   ports:
+      - 3002:3000
+      - 9229:9229
+   networks:
+      - yottanet
+   volumes:
+      - app-volume:/home/project
+      - ../project:/home/yottadb-settings
+      - ../.ssh:/root/.ssh
+      - .theia:/home/theia/.theia
+
+networks:
+    yottanet:
+volumes:
+    app-volume:
+
