@@ -28,6 +28,9 @@ Set the persistent YottaDB and Rust paths
 
       export yottadatadir="/path/to/YottaDB"
       export rustcode="/path/to/YDBRust"
+      export glbviewadd="192.168.240.1"
+      
+Where glbviewadd is the network address of the Docker server
 
 Provision the stack:
 
@@ -108,7 +111,13 @@ Run the Rust code:
     
  https://github.com/RamSailopal/YottaDB-FileMan/blob/main/docs/Fileman_22-2_Getting_Started.pdf
 
+# YottaDB global viewer
 
+Access to the global viewer via the web UI can be attained via the address:
+
+http://ipaddressofthedockerserver:8001
+
+**NOTE - The global viewer is only accessible via the dev environment.**
 
 # SSH Keys
 
