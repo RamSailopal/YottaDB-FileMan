@@ -1,4 +1,4 @@
 FROM docker.io/yottadb/yottadb-base 
-COPY *.sh /usr/local/bin/
+COPY Docker/*.sh /usr/local/bin/
 RUN apt-get update && apt-get install -y openssh-server clang cargo git lsyncd && cp /opt/yottadb/current/libyottadb.so /usr/lib && echo "H" | /opt/yottadb/current/ydb && cd /usr/local && git clone https://gitlab.com/YottaDB/Lang/YDBRust.git && cd /tmp && wget https://github.com/dlwicksell/fileman-22p2/raw/master/VA-FILEMAN-22P2.RSA && apt-get clean
 ENTRYPOINT service ssh start && /usr/local/bin/start.sh
