@@ -1,0 +1,26 @@
+name: Build and Publish
+
+on:
+  # run it on push to the default repository branch
+  push:
+    branches: [main]
+  # run it during pull request
+  pull_request:
+
+jobs:
+  build-and-push-docker-image:
+    runs-on: ubuntu-latest
+
+    # steps to perform in job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and push to Docker
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+         image: ramb0/yotta-fileman
+         dockerfile: Docker/dockerfile
+         registry: docker.io
+         username: ${{ secrets.DOCKER_USERNAME }}
+         password: ${{ secrets.DOCKER_PASSWORD }}

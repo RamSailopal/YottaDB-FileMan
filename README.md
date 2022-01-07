@@ -1,5 +1,7 @@
 # Introduction
 
+![example workflow](https://github.com/RamSailopal/YottaDB-FileMan/actions/workflows/deploy.yml/badge.svg)
+
 FileMan is YottaDB management utility developed as part of the Vista Project
 
 This repo allows the provision of a development environment through docker that gives you everything that you need to develop with Rust, YottaDB and FileMan
